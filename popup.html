@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Anna's Travel App</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">   
+  </head>
+  <body>
+  <script>
+    $(function() {
+      $( "#text" ).resizable({
+        handles: "se"
+      });
+    });
+  </script>
+    <p class="title">oyster</p>
+
+    <form>
+      <input type="text" id="name" placeholder="Name" name="text" />
+      <textarea id="text" value="Add Notes"></textarea>
+      <p id="selectBoard">Select Board:
+        <select id="dropdown">
+          <option value=""></option>
+        </select>
+      </p>
+      <br />
+      <button id="checkPage" class="btn">Pin this page now</button>      
+    </form>
+  </body>
+</html>

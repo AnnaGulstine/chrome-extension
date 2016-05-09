@@ -1,0 +1,80 @@
+body {
+  background: url("/background.png");
+  font-family: "Dosis";
+  width: 450px;
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+  line-height: 1.428;
+  letter-spacing: 2.5px;
+  color: white;
+  font-size: 24px;
+  text-shadow: 1px 1px #28639B;  
+}
+
+#textId {
+  margin-bottom: 15px;
+  font-family: "Dosis";
+  font-size: 14px;
+}
+
+#text { 
+  max-width: 400px;
+  width: 400px;
+  height: 100px;
+  padding: 5px;
+}
+
+.defaultText {
+  color: #888;
+}
+
+#dropdown {
+  background-color: #fff;
+  font-family: "Dosis";
+  text-transform: uppercase;
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
+}
+
+#selectBoard {
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 1px 1px gray;
+}
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 8px 37px;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+       -o-border-radius: 0;
+          border-radius: 0;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  display: inline-block;
+  margin: 15px 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+}
+
+.btn.focus, .btn:focus,
+.btn.active.focus, .btn.active:focus,
+.btn:active.focus, .btn:active:focus {
+  background: none;
+  outline: 0;
+}
