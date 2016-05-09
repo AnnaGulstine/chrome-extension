@@ -2,33 +2,37 @@
 <html>
   <head>
     <title>Anna's Travel App</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="boards_ctrl.js"></script>
     <script src="popup.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">   
   </head>
   <body>
-  <script>
-    $(function() {
-      $( "#text" ).resizable({
-        handles: "se"
-      });
-    });
-  </script>
-    <p class="title">oyster</p>
+    <div ng-app="app">
+      <div ng-controller="boardsController" ng-init="setup()">
+        <p class="title">oyster</p>
 
-    <form>
-      <input type="text" id="name" placeholder="Name" name="text" />
-      <textarea id="text" value="Add Notes"></textarea>
-      <p id="selectBoard">Select Board:
-        <select id="dropdown">
-          <option value=""></option>
-        </select>
-      </p>
-      <br />
-      <button id="checkPage" class="btn">Pin this page now</button>      
-    </form>
+        <select>
+            <option ng-repeat="board in boards" value="{{ board.address }}">{{ board.address }}</option>
+        </select>   
+
+        {{ message }}
+        <button id="checkPage" class="btn" ng-click="savePage()">Pin this page now</button>      
+
+<!-- 
+        <form>
+          <input type="text" id="name" placeholder="Name" name="text" />
+          <textarea id="text" value="Add Notes"></textarea>
+          <p id="selectBoard">Select Board!!!:
+            <select id="dropdown">
+              <option value=""></option>
+            </select>
+          </p>
+          <br />
+          <button id="checkPage" class="btn">Pin this page now</button>      
+        </form> -->
+      </div>
+    </div>
   </body>
 </html>

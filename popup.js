@@ -1,15 +1,15 @@
 /* global chrome */
 
 document.addEventListener('DOMContentLoaded', function() {
-  var xmlhttp = new XMLHttpRequest();
-  var url = "http://localhost:3000/api/v1/boards/get_id.json";
+  // var xmlhttp = new XMLHttpRequest();
+  // var url = "http://localhost:3000/api/v1/boards/get_id.json";
 
-  xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-      var myArr = JSON.parse(xmlhttp.responseText);
-      chrome.extension.getBackgroundPage().console.log(myArr);
-    }
-  };
+  // xmlhttp.onreadystatechange = function() {
+  //   if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+  //     var myArr = JSON.parse(xmlhttp.responseText);
+  //     chrome.extension.getBackgroundPage().console.log(myArr);
+  //   }
+  // };
   // }.then(function() {
   //   console.log(myArr);
   // });
@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
   //   document.getElementById("dropdown").appendChild(name);
   // });
 
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
+  // xmlhttp.open("GET", url, true);
+  // xmlhttp.send();
 
-  // fetch('http://localhost:3000/api/v1/boards/get_id.json').then(function(response) {
-  //   return response.json();
-  // }).then(function(data) {
-  //   console.log(data);
-  // });
+  fetch('http://localhost:3000/api/v1/boards/get_id.json').then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    console.log(data);
+  });
 
   var checkPageButton = document.getElementById('checkPage');
   checkPageButton.addEventListener('click', function() {
