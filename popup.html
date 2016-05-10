@@ -16,9 +16,8 @@
         <select>
             <option ng-repeat="board in boards" value="{{ board.address }}">{{ board.address }}</option>
         </select>   
-
-        {{ message }}
-        <button id="checkPage" class="btn" ng-click="savePage()">Pin this page now</button>      
+        <input type="text" placeholder="Text" ng-model="address"/>
+        <button class="btn" ng-click="addBoard(address)">Pin this page now</button>      
 
 <!-- 
         <form>
