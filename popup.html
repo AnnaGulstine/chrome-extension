@@ -5,7 +5,7 @@
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="boards_ctrl.js"></script>
-    <script src="popup.js"></script>
+    <!-- <script src="popup.js"></script> -->
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -13,11 +13,11 @@
       <div ng-controller="boardsController" ng-init="setup()">
         <p class="title">oyster</p>
 
-        <select>
-            <option ng-repeat="board in boards" value="{{ board.address }}">{{ board.address }}</option>
+        <select ng-model="board_id">
+            <option ng-repeat="board in boards" value="{{ board.id }}">{{ board.address }}</option>
         </select>   
-        <input type="text" placeholder="Text" ng-model="address"/>
-        <button class="btn" ng-click="addBoard(address)">Pin this page now</button>      
+        <input type="text" placeholder="Text" ng-model="text"/>
+        <button class="btn" ng-click="addPin(text, board_id)">Pin this page now</button>      
 
 <!-- 
         <form>
