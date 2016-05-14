@@ -2,9 +2,11 @@
 <html>
   <head>
     <title>Anna's Travel App</title>
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>     -->
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="boards_ctrl.js"></script>
+
     <!-- <script src="popup.js"></script> -->
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
@@ -14,23 +16,17 @@
         <p class="title">oyster</p>
 
         <select ng-model="board_id">
-            <option ng-repeat="board in boards" value="{{ board.id }}">{{ board.address }}</option>
-        </select>   
-        <input type="text" placeholder="Text" ng-model="text"/>
-        <button class="btn" ng-click="addPin(text, board_id)">Pin this page now</button>      
-
-<!-- 
-        <form>
-          <input type="text" id="name" placeholder="Name" name="text" />
-          <textarea id="text" value="Add Notes"></textarea>
-          <p id="selectBoard">Select Board!!!:
-            <select id="dropdown">
-              <option value=""></option>
-            </select>
-          </p>
-          <br />
-          <button id="checkPage" class="btn">Pin this page now</button>      
-        </form> -->
+            <option value="" selected>Select board</option>
+            <option ng-repeat="board in boards" value="{{ board.id }}" placeholder="Select board">{{ board.name }}</option>
+        </select>
+        <br />
+        <input type="text" placeholder="Name or Address" ng-model="name"/>
+        <!-- <input type="text" placeholder="Name or Address (optional)" ng-model="name" /> -->
+        <!-- <input ng-model="chosenPlace" name="name" type="text" googleplace class="inputText" />           -->
+        <br />
+        <input type="text" placeholder="Notes (optional)" ng-model="text"/>
+        <br />
+        <button class="btn" ng-click="addPin(board_id, name, text)">Pin this page now</button>      
       </div>
     </div>
   </body>
