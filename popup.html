@@ -19,6 +19,12 @@
             <option value="" selected>Select board</option>
             <option ng-repeat="board in boards" value="{{ board.id }}" placeholder="Select board">{{ board.name }}</option>
         </select>
+        <select ng-model="category_id">
+            <option value="" selected>Select category</option>
+            <option value="1" placeholder="Select board">Restaurants</option>
+            <option value="2" placeholder="Select board">Hotels</option>
+            <option value="3" placeholder="Select board">Attractions</option>
+        </select>
         <br />
         <input type="text" placeholder="Name or Address" ng-model="name"/>
         <!-- <input type="text" placeholder="Name or Address (optional)" ng-model="name" /> -->
@@ -26,7 +32,7 @@
         <br />
         <input type="text" placeholder="Notes (optional)" ng-model="text"/>
         <br />
-        <button class="btn" ng-click="addPin(board_id, name, text)">Pin this page now</button>      
+        <button class="btn" ng-click="addPin(category_id, board_id, name, text)">Pin this page now</button>      
       </div>
     </div>
   </body>
