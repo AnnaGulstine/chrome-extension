@@ -5,7 +5,6 @@
     $scope.setup = function() {
       $http.get("http://localhost:3000/api/v1/boards").then(function(response) {
         $scope.boards = response.data;
-        // $scope.category_id = response.data.pins;
       });
     };
 
@@ -20,7 +19,6 @@
         };
         $http.post("http://localhost:3000/api/v1/pins.json", params).then(function(response) {
           console.log(response);
-          // $scope.boards.push(newBoard);
         });
       });
     };
