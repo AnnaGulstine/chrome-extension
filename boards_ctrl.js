@@ -26,8 +26,12 @@
           }
       );
 
+        var url = tabs[0].url;
+        var urlNoProtocol = url.replace(/^https?\:\/\//i, "");
+        var correctURL = 'http://' + urlNoProtocol;
+
         var params = {
-          url: tabs[0].url,
+          url: correctURL,
           board_id: board_id,
           name: name,
           text: text,
@@ -35,6 +39,8 @@
         };
         $http.post("http://localhost:3000/api/v1/pins", params).then(function(response) {
           $scope.submitted = true;
+          board_id = response.data.board_id;
+          document.getElementById("redirectLink").href = "http://localhost:3000/boards/" + board_id;
         });
 
       });
