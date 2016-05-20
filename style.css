@@ -32,6 +32,7 @@ body {
 }
 
 #dropdown {
+  clear: both;
   background-color: #fff;
   font-family: "Dosis";
   text-transform: uppercase;
@@ -42,14 +43,14 @@ body {
 
 #selectBoard {
   color: white;
-  font-size: 1.5em;
+  font-size: 14px;
   text-shadow: 1px 1px gray;
 }
 
 .btn {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 11px;
+  font-size: 14px;
   padding: 8px 37px;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
@@ -77,4 +78,60 @@ body {
 .btn:active.focus, .btn:active:focus {
   background: none;
   outline: 0;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+#success {
+  font-size: 20px;
+  text-align: center;
+}
+
+.dropdown {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 8px 37px;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+       -o-border-radius: 0;
+          border-radius: 0;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  box-shadow: 1px 1px 1px gray;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  border-radius: 6px;
+  width: 200px;
+  height: 35px;
+}
+
+.addNewField {
+  width: 300px;
+  margin: 0 auto;
+  height: 18px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;  
+  font-family: "Dosis", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;  
+  opacity: 1 !important;
+  margin-bottom: 15px;
 }

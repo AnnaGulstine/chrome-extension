@@ -2,37 +2,47 @@
 <html>
   <head>
     <title>Anna's Travel App</title>
-    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>     -->
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?"></script>     -->
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="boards_ctrl.js"></script>
 
-    <!-- <script src="popup.js"></script> -->
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div ng-app="app">
       <div ng-controller="boardsController" ng-init="setup()">
-        <p class="title">oyster</p>
+          <div ng-show="!submitted">
+              
+            <img src="/oysterLogo.png" class="logo" />
 
-        <select ng-model="board_id">
-            <option value="" selected>Select board</option>
-            <option ng-repeat="board in boards" value="{{ board.id }}" placeholder="Select board">{{ board.name }}</option>
-        </select>
-        <select ng-model="category_id">
-            <option value="" selected>Select category</option>
-            <option value="1" placeholder="Select board">Restaurants</option>
-            <option value="2" placeholder="Select board">Hotels</option>
-            <option value="3" placeholder="Select board">Attractions</option>
-        </select>
-        <br />
-        <input type="text" placeholder="Name or Address" ng-model="name"/>
-        <!-- <input type="text" placeholder="Name or Address (optional)" ng-model="name" /> -->
-        <!-- <input ng-model="chosenPlace" name="name" type="text" googleplace class="inputText" />           -->
-        <br />
-        <input type="text" placeholder="Notes (optional)" ng-model="text"/>
-        <br />
-        <button class="btn" ng-click="addPin(category_id, board_id, name, text)">Pin this page now</button>      
+            <br />
+
+            <select ng-model="board_id" class="dropdown">
+                <option value="" selected>Select Trip</option>
+                <option ng-repeat="board in boards" value="{{ board.id }}" placeholder="Select Trip">{{ board.name }}</option>
+            </select>
+
+            <br />
+
+            <select ng-model="category" class="dropdown">
+                <option value="" selected>Select Category</option>
+                <option value="restaurants" placeholder="Select board">Restaurants</option>
+                <option value="hotels" placeholder="Select board">Hotels</option>
+                <option value="attractions" placeholder="Select board">Attractions</option>
+            </select>
+            <br />
+            <input type="text" placeholder="Location Name" ng-model="name" class="addNewField" />
+            <br />
+            <input type="text" placeholder="Notes (optional)" ng-model="text" class="addNewField" />
+            <br />
+            <button class="btn" ng-click="addPin(category, board_id, name, text)">Pin this page now</button>      
+          </div>
+          <div ng-show="submitted">
+            <img src="/oysterLogo.png" class="logo" />
+            <p id="success">PIN SUCCESSFULLY CREATED!</p>
+          </div>
+
       </div>
     </div>
   </body>
